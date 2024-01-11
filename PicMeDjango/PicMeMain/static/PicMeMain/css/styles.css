@@ -13,8 +13,6 @@
     src: url("{% static 'PicMeMain/font/Bachenas-Regular.otf' %}");
     font-family: 'Montserrat';
     src: url("{% static 'PicMeMain/font/Montserrat-Regular.ttf' %}");
-    font-family: 'Roboto';
-    src: url("{% static 'PicMeMain/font/Roboto-Regular.ttf' %}");
 }
 
 body{
@@ -81,7 +79,6 @@ footer{
     justify-content: center;
     align-items: center;
     width: 100%;
-    font-family: 'Roboto';
 }
 
 .content{
@@ -98,7 +95,6 @@ footer{
 }
 
 .content form button, input{
-    font-family: 'Roboto';
     font-size: 24px;
 }
 

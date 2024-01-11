@@ -1,3 +1,5 @@
+import random
+
 from django.shortcuts import render
 
 from django.http import HttpResponse, \
@@ -5,6 +7,30 @@ from django.http import HttpResponse, \
     HttpResponseServerError, HttpResponseBadRequest, Http404
 
 from django.shortcuts import render, redirect, get_object_or_404
+from .models import Photo
+from PIL import Image
+from random import randint
+
+def upload_photo(request):
+    if request.method == 'POST':
+        photo = request.FILES['photo']
+        new_photo = Photo.objects.create(image=photo)
+        new_photo.save()
+        print(new_photo.id)
+        print(new_photo.pk)
+        download_photo(request, int(new_photo.id))
+    return render(request, 'PicMeMain/index.html')
+
+def download_photo(request, photo_id):
+    photo = Photo.objects.get(id=photo_id)
+    image = Image.open(photo.image)
+    black_white_image = image.convert('L')
+    response = HttpResponse(content_type='image/jpeg')
+    temp_filename = photo.image.name
+    black_white_image.save(temp_filename)
+    response['Content-Disposition'] = f'attachment; filename="{photo.image.name}"'
+    return response
+
 
 def index(request):
     return render(request, 'PicMeMain/index.html')
