@@ -9,17 +9,16 @@ from django.http import HttpResponse, \
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Photo
 from PIL import Image
-from random import randint
+
 
 def upload_photo(request):
     if request.method == 'POST':
         photo = request.FILES['photo']
         new_photo = Photo.objects.create(image=photo)
         new_photo.save()
-        print(new_photo.id)
-        print(new_photo.pk)
         download_photo(request, int(new_photo.id))
     return render(request, 'PicMeMain/index.html')
+
 
 def download_photo(request, photo_id):
     photo = Photo.objects.get(id=photo_id)
@@ -30,10 +29,6 @@ def download_photo(request, photo_id):
     black_white_image.save(temp_filename)
     response['Content-Disposition'] = f'attachment; filename="{photo.image.name}"'
     return response
-
-
-def index(request):
-    return render(request, 'PicMeMain/index.html')
 
 def pageBadRequest(request, exception):
     exc = {'titleError': 'Ошибка 400()', 'descError': 'Ошибка запроса.'}
