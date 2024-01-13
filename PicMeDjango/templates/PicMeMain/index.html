@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block mainPage %}
+    <div class="container">
+        <div class="content">
+            <form class="form-img" method="post" enctype="multipart/form-data">
+                 {% csrf_token %}
+                <input class="input-but" type="file" name="photo" accept="image/png, image/jpeg">
+                <button type="submit">Загрузить</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

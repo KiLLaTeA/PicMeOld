@@ -1,0 +1,145 @@
+{% load static %}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Cuprum';
+    src: url({"% static 'PicMeMain/font/Cuprum-Regular.ttf' %}");
+    font-family: 'Bachenas';
+    src: url("{% static 'PicMeMain/font/Bachenas-Regular.otf' %}");
+    font-family: 'Montserrat';
+    src: url("{% static 'PicMeMain/font/Montserrat-Regular.ttf' %}");
+}
+
+body{
+    background-color: #FADFBA;
+}
+
+header{
+    font-family: 'Cuprum';
+    display: flex;
+    background-color: #E7B78B;
+    margin-bottom: 100px;
+}
+
+.menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    margin: 10px 25px;
+    font-size: 34px;
+    letter-spacing: 0.5px;
+    width: 100%;
+    color: black;
+}
+
+.menu a{
+    text-decoration: none;
+    color: black;
+}
+
+.logotype{
+    font-family: 'Bachenas';
+    font-size: 44px;
+    letter-spacing: 0.5px;
+    font-weight: bold;
+}
+
+footer{
+    font-family: 'Cuprum';
+    margin-top: 100px;
+}
+
+.foot{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #E7B78B;
+    height: 250px;
+    padding: 10px 25px;
+    font-size: 28px;
+    letter-spacing: 0.5px;
+}
+
+.foot a{
+    text-decoration: none;
+    color: black;
+}
+
+.foot ul li{
+    list-style-type: none;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+    background-color: #E7B78B;
+    border: 10px solid #875120;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 100px 0;
+}
+
+.content form button, input{
+    font-size: 24px;
+}
+
+.form-img{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-but{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}
+
+.form-img button{
+    margin-top: 20px;
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    border: 3px solid #875120;
+    background-color: #FADFBA;
+}
+
+.except{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 400px;
+    height: 300px;
+    background-color: #E7B78B;
+    border-radius: 20px;
+    border: 10px solid #875120;
+}
+
+.except h1{
+    font-size: 64px;
+    margin-bottom: 20px;
+}
+
+.except p{
+    font-size: 24px;
+}

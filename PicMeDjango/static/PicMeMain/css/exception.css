@@ -1,0 +1,43 @@
+{% load static %}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Cuprum';
+    src: url("{% static 'PicMeMain/font/Cuprum-Regular.ttf' %}");
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Cuprum';
+    background-color: #FADFBA;
+}
+
+.except{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 400px;
+    height: 300px;
+    background-color: #E7B78B;
+    border-radius: 20px;
+    border: 10px solid #875120;
+}
+
+.except h1{
+    font-size: 64px;
+    margin-bottom: 20px;
+}
+
+.except p{
+    font-size: 24px;
+}
